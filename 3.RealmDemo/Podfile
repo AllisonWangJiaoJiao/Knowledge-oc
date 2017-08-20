@@ -1,0 +1,16 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+
+target 'RealmDemo' do
+  use_frameworks!
+
+  # Pods for RealmDemo
+    pod 'Realm', '~> 3.0.0-beta.2'
+    
+    target 'RealmDemoTests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+
+end
+
