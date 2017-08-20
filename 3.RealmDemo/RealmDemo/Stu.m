@@ -10,6 +10,10 @@
 
 @implementation Stu
 
++(NSString *)primaryKey{
+    return @"num";
+}
+
 // Specify default values for properties
 
 //+ (NSDictionary *)defaultPropertyValues
