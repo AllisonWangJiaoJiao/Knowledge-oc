@@ -10,9 +10,9 @@
 
 @implementation Stu
 
-+(NSString *)primaryKey{
-    return @"num";
-}
+//+(NSString *)primaryKey{
+//    return @"num";
+//}
 
 // Specify default values for properties
 

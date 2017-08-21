@@ -20,12 +20,8 @@
 
 - (void)testSaveModel {
  
-    Stu *stu = [[Stu alloc]initWithValue:@[@2,@"土豆"]];
+    Stu *stu = [[Stu alloc]initWithValue:@[@3,@"土豆"]];
     RLMRealm *realm = [RLMRealm defaultRealm];
-//    [realm beginWriteTransaction];
-//    [realm addObject:stu];
-//    [realm commitWriteTransaction];
-    
     [realm transactionWithBlock:^{
         [realm addObject:stu];
         NSLog(@"num:%d name: %@",stu.num,stu.name);
@@ -63,6 +59,28 @@
     }];
     
 }
+
+- (void)testQuryModel {
+    
+    //所有的查询(包括查询和属性访问)在realm中都是延迟加载的,终于当属性被访问时,才能够读取相应的数据
+    RLMResults *result = [Stu allObjects];
+    NSLog(@"%@",result);
+    
+    ///方法2
+    RLMResults <Stu *> *stus = [Stu objectsWhere:@"name = '土豆'"];
+//    NSLog(@"%@",stus);
+    
+    ///方法3
+    RLMResults *sorRes =  [result sortedResultsUsingKeyPath:@"name" ascending:YES];
+    NSLog(@"%@",sorRes);
+    
+    //方法4
+    ///链式查询
+    RLMResults *subRes = [sorRes objectsWhere:@"name = '哈哈'"];
+    NSLog(@"%@",subRes);
+    
+}
+
 
 - (void)testUpdate{
     
