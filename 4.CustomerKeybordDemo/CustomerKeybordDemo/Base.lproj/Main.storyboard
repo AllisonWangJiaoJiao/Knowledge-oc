@@ -58,7 +58,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3jM-Ea-snE"/>
                     <connections>
-                        <outlet property="textFiled" destination="twl-CQ-0Qc" id="vdX-xM-SVV"/>
+                        <outlet property="textFiled" destination="twl-CQ-0Qc" id="PLk-9F-7uO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

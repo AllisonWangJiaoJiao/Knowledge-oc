@@ -565,6 +565,7 @@
 				372287F91F4BD39800686BEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		372287FA1F4BD39800686BEB /* Build configuration list for PBXNativeTarget "CustomerKeybordDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +574,7 @@
 				372287FC1F4BD39800686BEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

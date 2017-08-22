@@ -8,6 +8,11 @@
 
 #import "YFNumberKeyboardView.h"
 
+@interface YFNumberKeyboardView ()
+
+
+@end
+
 @implementation YFNumberKeyboardView
 
 + (instancetype)keyboardView
@@ -27,6 +32,19 @@
         self.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 250, [[UIScreen mainScreen] bounds].size.width, 250);
     }];
 }
+
+//ToolBar上按钮的点击事件
+/// 上 -- tag:100   下 -- tag:101   Done -- tag:102
+- (IBAction)toolBarClick:(UIButton *)sender {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didToolBarClick:)]) {
+        [self.delegate didToolBarClick:sender.tag];
+    }
+    
+}
+
+
+
 
 //按钮的点击事件
 /*

@@ -30,7 +30,7 @@
     [super viewDidLoad];
 
     _textFiled.delegate = self;
-//    [self.view addSubview:self.keyboardView];
+    [self.view addSubview:self.keyboardView];
 
 }
 
@@ -56,9 +56,24 @@
     [_keyboardView dismissKeyboardView];
 }
 
+//ToolBarClick
+- (void)didToolBarClick:(NSInteger)sender{
+    if (sender == 100) {//向上
+        NSLog(@"向上");
+        
+    }else if (sender == 101){//向下
+        NSLog(@"向下");
+        [_textFiled becomeFirstResponder ];
+        
+    }else{//Done
+        NSLog(@"Done");
+    }
+}
+
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
-//    [_keyboardView showPopKeyboardView];
+    [_keyboardView dismissKeyboardView];
+
 }
 
 - (void)didReceiveMemoryWarning {
