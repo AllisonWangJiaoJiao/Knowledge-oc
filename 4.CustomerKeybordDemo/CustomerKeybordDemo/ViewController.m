@@ -36,21 +36,24 @@
 
 #pragma mark - <UITextFieldDelegate>
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-//    [_keyboardView showPopKeyboardView];
+    [_keyboardView showPopKeyboardView];
 }
 
 #pragma mark -<YFNumberKeyboardViewDelegate>
+//字母数字
 -(void)didTouchedNumberKey:(NSString *)string{
-    NSLog(@"%@",string);
+    [self.textFiled insertText:string];
 }
 
-//点击
+//删除
 -(void)didTouchedDelete{
-    
-}
+    [self.textFiled deleteBackward];
 
+}
+//确定
 -(void)didTouchedConfirm{
-    
+    [self.textFiled resignFirstResponder];
+    [_keyboardView dismissKeyboardView];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
