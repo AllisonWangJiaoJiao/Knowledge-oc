@@ -8,52 +8,48 @@
 
 #import "ViewController.h"
 #import "YFNumberKeyboardView.h"
-@interface ViewController () <YFNumberKeyboardViewDelegate,UITextFieldDelegate>
-@property (nonatomic,strong)YFNumberKeyboardView *keyboardView;
-@property (weak, nonatomic) IBOutlet UITextField *textFiled;
+#import "TableViewCell.h"
 
+@interface ViewController () <YFNumberKeyboardViewDelegate,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic,assign)NSInteger  selectedRow;
 @end
 
 @implementation ViewController
 
--(YFNumberKeyboardView *)keyboardView{
-    if (!_keyboardView) {
-        _keyboardView =[YFNumberKeyboardView keyboardView];
-        _keyboardView.frame =  CGRectMake(0, [[UIScreen mainScreen] bounds].size.height , [[UIScreen mainScreen] bounds].size.width, 250);
-        _keyboardView.delegate = self;
-    }
-    return _keyboardView;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _textFiled.delegate = self;
-    [self.view addSubview:self.keyboardView];
+    _selectedRow = 0;
+//    _textFiled.delegate = self;
+//    [self.view addSubview:self.keyboardView];
+
+    [_tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"cellID"];
+     [_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:8 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
 
 }
 
 #pragma mark - <UITextFieldDelegate>
-- (void)textFieldDidBeginEditing:(UITextField *)textField{
-    [_keyboardView showPopKeyboardView];
-}
+//- (void)textFieldDidBeginEditing:(UITextField *)textField{
+//    [_keyboardView showPopKeyboardView];
+//}
 
 #pragma mark -<YFNumberKeyboardViewDelegate>
 //字母数字
 -(void)didTouchedNumberKey:(NSString *)string{
-    [self.textFiled insertText:string];
+//    [self.textFiled insertText:string];
+
 }
 
 //删除
 -(void)didTouchedDelete{
-    [self.textFiled deleteBackward];
+//    [self.textFiled deleteBackward];
 
 }
 //确定
 -(void)didTouchedConfirm{
-    [self.textFiled resignFirstResponder];
-    [_keyboardView dismissKeyboardView];
+//    [self.textFiled resignFirstResponder];
 }
 
 //ToolBarClick
@@ -63,7 +59,7 @@
         
     }else if (sender == 101){//向下
         NSLog(@"向下");
-        [_textFiled becomeFirstResponder ];
+//        [_textFiled becomeFirstResponder ];
         
     }else{//Done
         NSLog(@"Done");
@@ -72,14 +68,33 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
-    [_keyboardView dismissKeyboardView];
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark --UITableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 10;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return  60;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    _selectedRow = indexPath.row;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
+    NSString *num = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    [cell setInfo:num content:@""];
+//    cell.block = ^(NSString *contentStr) {
+//        NSLog(@"%@",contentStr);
+//        [_keyboardView showPopKeyboardView];
+//    };
+    return cell;
+    
+}
 
 @end

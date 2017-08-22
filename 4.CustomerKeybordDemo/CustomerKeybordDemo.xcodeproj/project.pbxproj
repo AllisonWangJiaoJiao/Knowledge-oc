@@ -17,6 +17,8 @@
 		372287F31F4BD39800686BEB /* CustomerKeybordDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 372287F21F4BD39800686BEB /* CustomerKeybordDemoTests.m */; };
 		372288011F4BD3AC00686BEB /* YFNumberKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 372287FF1F4BD3AC00686BEB /* YFNumberKeyboardView.m */; };
 		372288021F4BD3AC00686BEB /* YFNumberKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 372288001F4BD3AC00686BEB /* YFNumberKeyboardView.xib */; };
+		3722880F1F4C112B00686BEB /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3722880D1F4C112B00686BEB /* TableViewCell.m */; };
+		372288101F4C112B00686BEB /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3722880E1F4C112B00686BEB /* TableViewCell.xib */; };
 		D2AC1648DD20DB1514814BC5 /* libPods-CustomerKeybordDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 182F1A16E953EA1313819E4F /* libPods-CustomerKeybordDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,9 @@
 		372287FE1F4BD3AC00686BEB /* YFNumberKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFNumberKeyboardView.h; sourceTree = "<group>"; };
 		372287FF1F4BD3AC00686BEB /* YFNumberKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFNumberKeyboardView.m; sourceTree = "<group>"; };
 		372288001F4BD3AC00686BEB /* YFNumberKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YFNumberKeyboardView.xib; sourceTree = "<group>"; };
+		3722880C1F4C112B00686BEB /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		3722880D1F4C112B00686BEB /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		3722880E1F4C112B00686BEB /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		40DAC918F9A01FFE0A04E15B /* Pods-CustomerKeybordDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomerKeybordDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CustomerKeybordDemoTests/Pods-CustomerKeybordDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		9BC7D6C186B921A3C24F51A4 /* Pods-CustomerKeybordDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomerKeybordDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomerKeybordDemoTests/Pods-CustomerKeybordDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4EC73F5E65622149D506796 /* Pods-CustomerKeybordDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomerKeybordDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CustomerKeybordDemo/Pods-CustomerKeybordDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +108,9 @@
 				372287DC1F4BD39700686BEB /* AppDelegate.m */,
 				372287DE1F4BD39700686BEB /* ViewController.h */,
 				372287DF1F4BD39700686BEB /* ViewController.m */,
+				3722880C1F4C112B00686BEB /* TableViewCell.h */,
+				3722880D1F4C112B00686BEB /* TableViewCell.m */,
+				3722880E1F4C112B00686BEB /* TableViewCell.xib */,
 				372287E11F4BD39700686BEB /* Main.storyboard */,
 				372287E41F4BD39700686BEB /* Assets.xcassets */,
 				372287E61F4BD39700686BEB /* LaunchScreen.storyboard */,
@@ -214,6 +222,7 @@
 				TargetAttributes = {
 					372287D41F4BD39700686BEB = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = FS3S833WQ7;
 						ProvisioningStyle = Automatic;
 					};
 					372287ED1F4BD39800686BEB = {
@@ -248,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				372287E81F4BD39700686BEB /* LaunchScreen.storyboard in Resources */,
+				372288101F4C112B00686BEB /* TableViewCell.xib in Resources */,
 				372288021F4BD3AC00686BEB /* YFNumberKeyboardView.xib in Resources */,
 				372287E51F4BD39700686BEB /* Assets.xcassets in Resources */,
 				372287E31F4BD39700686BEB /* Main.storyboard in Resources */,
@@ -364,6 +374,7 @@
 				372287E01F4BD39700686BEB /* ViewController.m in Sources */,
 				372288011F4BD3AC00686BEB /* YFNumberKeyboardView.m in Sources */,
 				372287DD1F4BD39700686BEB /* AppDelegate.m in Sources */,
+				3722880F1F4C112B00686BEB /* TableViewCell.m in Sources */,
 				372287DA1F4BD39700686BEB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +512,7 @@
 			baseConfigurationReference = 0EDC323CDA9C045CBE73472F /* Pods-CustomerKeybordDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FS3S833WQ7;
 				INFOPLIST_FILE = CustomerKeybordDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = woasis.CustomerKeybordDemo;
@@ -513,6 +525,7 @@
 			baseConfigurationReference = E4EC73F5E65622149D506796 /* Pods-CustomerKeybordDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FS3S833WQ7;
 				INFOPLIST_FILE = CustomerKeybordDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = woasis.CustomerKeybordDemo;

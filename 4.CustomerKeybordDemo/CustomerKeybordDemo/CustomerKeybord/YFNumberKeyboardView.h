@@ -14,7 +14,6 @@
 - (void)didTouchedNumberKey:(NSString*)string;
 - (void)didTouchedDelete;
 - (void)didTouchedConfirm;
-- (void)didToolBarClick:(NSInteger)sender;
 @end
 
 @interface YFNumberKeyboardView : UIView
