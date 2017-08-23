@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _dataArray = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10"];
+    _dataArray = @[@"",@"",@"",@"",@"",@"",@"",@"",@"",@""];
     [_tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"cellID"];
     //[_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:8 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
 
@@ -41,10 +41,16 @@
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
     cell.row = indexPath.row;
     NSString *num = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
-    [cell setInfo:num content:@""];
+    NSString *contentStr = _dataArray[indexPath.row];
+    [cell setInfo:num content:contentStr];
     cell.block = ^(NSString *contentStr, NSInteger row) {
         self.currentRow = row;
-        
+
+    NSMutableArray *temArray = [self.dataArray mutableCopy];
+    [temArray replaceObjectAtIndex:_currentRow withObject:contentStr];
+    self.dataArray = temArray;
+    NSLog(@"%@",self.dataArray);
+  
     };
     cell.keyboardV.delegate = self;
 
