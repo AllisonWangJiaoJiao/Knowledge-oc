@@ -7,12 +7,9 @@
 //
 
 #import "TableViewCell.h"
-#import "YFNumberKeyboardView.h"
 
 @interface TableViewCell ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *numLabel;
-@property (weak, nonatomic) IBOutlet UITextField *contentTF;
-@property (nonatomic,strong) YFNumberKeyboardView  *keyboardV;
 @end
 
 @implementation TableViewCell
@@ -33,13 +30,16 @@
     _contentTF.text = content;
 }
 
+#pragma mark -<UITextFieldDelegate>
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     
-//    self.block(textField.text);
+    NSLog(@"%ld",(long)self.row);
+    self.block(textField.text, self.row);
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-//      self.block(textField.text);
+    NSLog(@"%ld",(long)self.row);
+    self.block(textField.text, self.row);
 }
 
 

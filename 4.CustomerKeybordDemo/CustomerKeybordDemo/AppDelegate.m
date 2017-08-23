@@ -21,7 +21,7 @@
     
 //    [IQKeyboardManager sharedManager].enableAutoToolbar = YES; //不显示键盘上工具条
 //    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;//点击空白地方 隐藏键盘
-//    [[IQKeyboardManager sharedManager] setEnable:YES]; // 设置是否启用IQKeyboardManager
+    [[IQKeyboardManager sharedManager] setEnable:YES]; // 设置是否启用IQKeyboardManager
     
     return YES;
 }

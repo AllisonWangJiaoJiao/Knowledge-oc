@@ -19,13 +19,13 @@
 - (void)dismissKeyboardView{
     [UIView animateWithDuration:0.35 animations:^{
         self.alpha = 0;
-        self.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height , [[UIScreen mainScreen] bounds].size.width, 250);
+        self.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height , [[UIScreen mainScreen] bounds].size.width, 230);
     }];
 }
 - (void)showPopKeyboardView{
     [UIView animateWithDuration:0.35 animations:^{
         self.alpha = 1;
-        self.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 250, [[UIScreen mainScreen] bounds].size.width, 250);
+        self.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 250, [[UIScreen mainScreen] bounds].size.width, 230);
     }];
 }
 
