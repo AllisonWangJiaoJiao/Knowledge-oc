@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30C67F65A5EB97A37F72960C /* Pods_RealmDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCA687976BB4375A5902519 /* Pods_RealmDemoTests.framework */; };
+		3770CE791F4D8F4C00F1F279 /* Migration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3770CE781F4D8F4C00F1F279 /* Migration.m */; };
 		37EC94001F496E3400521D87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EC93FF1F496E3400521D87 /* main.m */; };
 		37EC94031F496E3400521D87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EC94021F496E3400521D87 /* AppDelegate.m */; };
 		37EC94061F496E3400521D87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EC94051F496E3400521D87 /* ViewController.m */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		1AA766E9D98EDFF3816B02ED /* Pods-RealmDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmDemoTests/Pods-RealmDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		31796A4560BEB485632AD09C /* Pods-RealmDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmDemo/Pods-RealmDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3770CE781F4D8F4C00F1F279 /* Migration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migration.m; sourceTree = "<group>"; };
 		37EC93FB1F496E3400521D87 /* RealmDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37EC93FF1F496E3400521D87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37EC94011F496E3400521D87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				37EC941B1F4984BB00521D87 /* RealmDemoTests.m */,
+				3770CE781F4D8F4C00F1F279 /* Migration.m */,
 				37EC941D1F4984BB00521D87 /* Info.plist */,
 			);
 			path = RealmDemoTests;
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3770CE791F4D8F4C00F1F279 /* Migration.m in Sources */,
 				37EC941C1F4984BB00521D87 /* RealmDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

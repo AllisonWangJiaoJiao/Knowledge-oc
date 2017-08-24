@@ -19,17 +19,27 @@
 
 
 - (void)testSaveModel {
+    
+    
+    [self setDefaultRealmForUser:@"Allison"];
  
-    Stu *stu = [[Stu alloc]initWithValue:@[@3,@"土豆"]];
     RLMRealm *realm = [RLMRealm defaultRealm];
+    Stu *stu = [[Stu alloc]initWithValue:@[@3,@"土豆"]];
     [realm transactionWithBlock:^{
         [realm addObject:stu];
-        NSLog(@"num:%d name: %@",stu.num,stu.name);
+//        NSLog(@"num:%d name: %@",stu.num,stu.name);
     }];
     
 //    [realm transactionWithBlock:^{
 //        [Stu createInRealm:realm withValue:@{@"num":@3,@"name":@"哈哈"}];
 //    }];
+}
+- (void)setDefaultRealmForUser:(NSString *)username{
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    //使用默认的目录,使用用户名来替换默认的文件名
+    config.fileURL = [[[config.fileURL URLByDeletingLastPathComponent]URLByAppendingPathComponent:username]URLByAppendingPathExtension:@"realm"];
+    //将这个配置应用到默认的realm数据库中
+    [RLMRealmConfiguration setDefaultConfiguration:config];
 }
 
 - (void)testDeleteModel {
@@ -89,7 +99,7 @@
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm transactionWithBlock:^{
         [realm addOrUpdateObject:stu];
-        NSLog(@"num:%d name: %@",stu.num,stu.name);
+//        NSLog(@"num:%d name: %@",stu.num,stu.name);
 //        [Stu createOrUpdateInRealm:realm withValue:@{@"num":@3,@"name":@"哈哈"}];
     }];
     
