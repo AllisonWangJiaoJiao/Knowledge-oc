@@ -15,6 +15,7 @@
 		37466D011F4E6D1400B09936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37466D001F4E6D1400B09936 /* Assets.xcassets */; };
 		37466D041F4E6D1400B09936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37466D021F4E6D1400B09936 /* LaunchScreen.storyboard */; };
 		37466D0F1F4E6D1400B09936 /* FMDBMigrationManagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37466D0E1F4E6D1400B09936 /* FMDBMigrationManagerDemoTests.m */; };
+		3792406E1F50277800513D1C /* Migration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792406D1F50277800513D1C /* Migration.m */; };
 		887B768CF6F2AB134F5D2971 /* libPods-FMDBMigrationManagerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98E2378BBC7083B7376CB5 /* libPods-FMDBMigrationManagerDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		37466D0A1F4E6D1400B09936 /* FMDBMigrationManagerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMDBMigrationManagerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37466D0E1F4E6D1400B09936 /* FMDBMigrationManagerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBMigrationManagerDemoTests.m; sourceTree = "<group>"; };
 		37466D101F4E6D1400B09936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3792406C1F50277800513D1C /* Migration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migration.h; sourceTree = "<group>"; };
+		3792406D1F50277800513D1C /* Migration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migration.m; sourceTree = "<group>"; };
 		3D98E2378BBC7083B7376CB5 /* libPods-FMDBMigrationManagerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FMDBMigrationManagerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4462CD93A6847D1480F5D340 /* Pods-FMDBMigrationManagerDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMDBMigrationManagerDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMDBMigrationManagerDemoTests/Pods-FMDBMigrationManagerDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4BCA014503443221D90F7968 /* Pods-FMDBMigrationManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMDBMigrationManagerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMDBMigrationManagerDemo/Pods-FMDBMigrationManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 		37466CF31F4E6D1400B09936 /* FMDBMigrationManagerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3792406C1F50277800513D1C /* Migration.h */,
+				3792406D1F50277800513D1C /* Migration.m */,
 				37466CF71F4E6D1400B09936 /* AppDelegate.h */,
 				37466CF81F4E6D1400B09936 /* AppDelegate.m */,
 				37466CFA1F4E6D1400B09936 /* ViewController.h */,
@@ -344,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3792406E1F50277800513D1C /* Migration.m in Sources */,
 				37466CFC1F4E6D1400B09936 /* ViewController.m in Sources */,
 				37466CF91F4E6D1400B09936 /* AppDelegate.m in Sources */,
 				37466CF61F4E6D1400B09936 /* main.m in Sources */,
@@ -547,6 +553,7 @@
 				37466D151F4E6D1400B09936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37466D161F4E6D1400B09936 /* Build configuration list for PBXNativeTarget "FMDBMigrationManagerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +562,7 @@
 				37466D181F4E6D1400B09936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
