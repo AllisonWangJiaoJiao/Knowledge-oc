@@ -1,0 +1,9 @@
+target ‘FMDB_Demo’ do
+
+platform :ios, '8.0'
+
+pod 'FMDB'
+pod 'Masonry'
+
+end
+

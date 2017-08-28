@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mqO-eM-9re">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzJ-3f-nKc">
+                                <rect key="frame" x="250" y="64" width="125" height="30"/>
+                                <state key="normal" title="删除sex"/>
+                                <connections>
+                                    <action selector="butDelColumnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vGc-QY-O27"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iy1-Ya-Qiw">
+                                <rect key="frame" x="0.0" y="64" width="125" height="30"/>
+                                <state key="normal" title="增加数据"/>
+                                <connections>
+                                    <action selector="butLoadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AKq-yF-69e"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pMF-8i-HM3">
+                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9tY-us-nQf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4xY-yf-E62"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASi-9S-n53">
+                                <rect key="frame" x="125" y="64" width="125" height="30"/>
+                                <state key="normal" title="增加sex"/>
+                                <connections>
+                                    <action selector="butAddColumnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="39D-40-nGq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iy1-Ya-Qiw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="24V-9R-WyA"/>
+                            <constraint firstItem="pMF-8i-HM3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="30H-x7-JGX"/>
+                            <constraint firstItem="pMF-8i-HM3" firstAttribute="top" secondItem="ASi-9S-n53" secondAttribute="bottom" id="Ffo-YW-lhD"/>
+                            <constraint firstItem="ASi-9S-n53" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FxM-8X-dNs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pMF-8i-HM3" secondAttribute="bottom" id="GOd-Y7-j08"/>
+                            <constraint firstItem="QzJ-3f-nKc" firstAttribute="leading" secondItem="ASi-9S-n53" secondAttribute="trailing" id="GeZ-GI-gyR"/>
+                            <constraint firstItem="pMF-8i-HM3" firstAttribute="top" secondItem="QzJ-3f-nKc" secondAttribute="bottom" id="Hda-I2-lmU"/>
+                            <constraint firstAttribute="trailing" secondItem="pMF-8i-HM3" secondAttribute="trailing" id="K2n-ZE-bLo"/>
+                            <constraint firstItem="QzJ-3f-nKc" firstAttribute="width" secondItem="iy1-Ya-Qiw" secondAttribute="width" id="Nab-8E-BJS"/>
+                            <constraint firstItem="pMF-8i-HM3" firstAttribute="top" secondItem="iy1-Ya-Qiw" secondAttribute="bottom" id="Rcw-2E-UfU"/>
+                            <constraint firstAttribute="trailing" secondItem="QzJ-3f-nKc" secondAttribute="trailing" id="UYF-Qm-OtM"/>
+                            <constraint firstItem="pMF-8i-HM3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="V8g-Qg-ZPO"/>
+                            <constraint firstItem="iy1-Ya-Qiw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="X9S-02-p9F"/>
+                            <constraint firstItem="QzJ-3f-nKc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jz3-eO-o2c"/>
+                            <constraint firstItem="ASi-9S-n53" firstAttribute="width" secondItem="iy1-Ya-Qiw" secondAttribute="width" id="qsJ-0u-gKq"/>
+                            <constraint firstItem="ASi-9S-n53" firstAttribute="leading" secondItem="iy1-Ya-Qiw" secondAttribute="trailing" id="zkb-gp-2qc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="du3-Uw-dyN"/>
+                    <connections>
+                        <outlet property="but_addSex" destination="ASi-9S-n53" id="FbW-tN-blN"/>
+                        <outlet property="but_delSex" destination="QzJ-3f-nKc" id="DyO-7g-vrZ"/>
+                        <outlet property="but_load" destination="iy1-Ya-Qiw" id="uwu-7N-Gn8"/>
+                        <outlet property="tableView" destination="pMF-8i-HM3" id="c1d-MO-q5Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428" y="-210"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4wv-Zq-II5">
+            <objects>
+                <navigationController id="mqO-eM-9re" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sxF-Eg-kNv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Rdu-ze-Goi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALW-F5-jW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-502" y="-210"/>
+        </scene>
+    </scenes>
+</document>

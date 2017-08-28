@@ -11,6 +11,7 @@
 #import "FMDBMigrationManager.h"
 #import "Migration.h"
 
+
 @interface FMDBMigrationManagerDemoTests : XCTestCase
 @property(nonatomic,strong)FMDatabase *db;
 
@@ -36,8 +37,8 @@
     
     if ([_db open]) {
         //创建一个名为Student的表 包含一个字段name
-        
-        BOOL result = [_db executeUpdate:@"CREATE TABLE  if not exists Book (id integer primary key autoincrement, bookNumber integer, bookName text, authorID integer, pressName text);"];
+          NSString *createSql = [NSString stringWithFormat:@"CREATE TABLE  if not exists %@ (id integer primary key autoincrement, bookNumber integer, bookName text, authorID integer, pressName text);",@"SBook"];
+        BOOL result = [_db executeUpdate:createSql];
         
         if (result) {
             NSLog(@"创表成功");
