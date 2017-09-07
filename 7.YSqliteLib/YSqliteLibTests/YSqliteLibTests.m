@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "YSqliteTool.h"
 
 @interface YSqliteLibTests : XCTestCase
 
@@ -25,8 +26,13 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+   
+    NSString *sql = @"CREATE TABLE IF NOT EXISTS t_stu(id integer PRIMARY KEY AUTOINCREMENT, name text NOT NULL ,age integer, score real)";
+   BOOL result =  [YSqliteTool dealSql:sql withUid:nil];
+    XCTAssertEqual(result, YES);
+    
+    
+    
 }
 
 - (void)testPerformanceExample {
