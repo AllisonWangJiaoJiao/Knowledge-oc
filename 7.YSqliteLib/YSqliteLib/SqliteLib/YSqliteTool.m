@@ -65,20 +65,19 @@ static sqlite3 *_ppDb;
         int columnCount = sqlite3_column_count(ppStmt);
         
         NSMutableDictionary *rowDic = [NSMutableDictionary dictionary];
+        [rowDicArray addObject:rowDic];
         // 2.遍历列(列名,值)
         for (int i = 0 ; i < columnCount; i ++) {
             //这一列的每一列
-            //列名
-            NSString *columnName = [NSString stringWithUTF8String:sqlite3_column_name(ppStmt, i)];
-            
-            // 列的值
+            //--- 列名
+            const char * columnNameC = sqlite3_column_name(ppStmt, i);
+            NSString *columnName = [NSString stringWithUTF8String:columnNameC];
+            //--- 列值
             // 不同的列, 如果类型不同, 我们需要使用不同的函数, 获取响应的值
             // 1. 获取这一列对应的类型
             int type = sqlite3_column_type(ppStmt, i);
 
             // 2. 根据不同的类型, 使用不同的函数,获取相应的值
-            
-            
             id value;
             
             switch (type) {

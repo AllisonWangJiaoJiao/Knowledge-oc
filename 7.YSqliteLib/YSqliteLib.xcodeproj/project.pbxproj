@@ -16,6 +16,10 @@
 		37B07BA11F60DCBE007DFD18 /* YSqliteLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B07BA01F60DCBE007DFD18 /* YSqliteLibTests.m */; };
 		37B07BAE1F60E724007DFD18 /* YSqliteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B07BAD1F60E724007DFD18 /* YSqliteTool.m */; };
 		37B07BB11F60E74B007DFD18 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B07BB01F60E74B007DFD18 /* libsqlite3.0.tbd */; };
+		37B07BB71F6124B3007DFD18 /* YModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B07BB61F6124B3007DFD18 /* YModel.m */; };
+		37B07BBD1F6127D2007DFD18 /* YSqliteModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B07BBC1F6127D2007DFD18 /* YSqliteModelTool.m */; };
+		37B07BC01F6129C2007DFD18 /* YModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B07BBF1F6129C2007DFD18 /* YModelTool.m */; };
+		37B07BC41F61302B007DFD18 /* YModelToolsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B07BC31F61302B007DFD18 /* YModelToolsTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,14 @@
 		37B07BAC1F60E724007DFD18 /* YSqliteTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSqliteTool.h; sourceTree = "<group>"; };
 		37B07BAD1F60E724007DFD18 /* YSqliteTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSqliteTool.m; sourceTree = "<group>"; };
 		37B07BB01F60E74B007DFD18 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		37B07BB51F6124B3007DFD18 /* YModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YModel.h; sourceTree = "<group>"; };
+		37B07BB61F6124B3007DFD18 /* YModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YModel.m; sourceTree = "<group>"; };
+		37B07BBB1F6127D2007DFD18 /* YSqliteModelTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSqliteModelTool.h; sourceTree = "<group>"; };
+		37B07BBC1F6127D2007DFD18 /* YSqliteModelTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSqliteModelTool.m; sourceTree = "<group>"; };
+		37B07BBE1F6129C2007DFD18 /* YModelTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YModelTool.h; sourceTree = "<group>"; };
+		37B07BBF1F6129C2007DFD18 /* YModelTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YModelTool.m; sourceTree = "<group>"; };
+		37B07BC31F61302B007DFD18 /* YModelToolsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YModelToolsTest.m; sourceTree = "<group>"; };
+		37B07BCC1F61498D007DFD18 /* YModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YModelProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +105,8 @@
 				37B07B8A1F60DCBE007DFD18 /* AppDelegate.m */,
 				37B07B8C1F60DCBE007DFD18 /* ViewController.h */,
 				37B07B8D1F60DCBE007DFD18 /* ViewController.m */,
+				37B07BB51F6124B3007DFD18 /* YModel.h */,
+				37B07BB61F6124B3007DFD18 /* YModel.m */,
 				37B07B8F1F60DCBE007DFD18 /* Main.storyboard */,
 				37B07B921F60DCBE007DFD18 /* Assets.xcassets */,
 				37B07B941F60DCBE007DFD18 /* LaunchScreen.storyboard */,
@@ -114,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				37B07BA01F60DCBE007DFD18 /* YSqliteLibTests.m */,
+				37B07BC31F61302B007DFD18 /* YModelToolsTest.m */,
 				37B07BA21F60DCBE007DFD18 /* Info.plist */,
 			);
 			path = YSqliteLibTests;
@@ -124,6 +139,11 @@
 			children = (
 				37B07BAC1F60E724007DFD18 /* YSqliteTool.h */,
 				37B07BAD1F60E724007DFD18 /* YSqliteTool.m */,
+				37B07BBB1F6127D2007DFD18 /* YSqliteModelTool.h */,
+				37B07BBC1F6127D2007DFD18 /* YSqliteModelTool.m */,
+				37B07BBE1F6129C2007DFD18 /* YModelTool.h */,
+				37B07BBF1F6129C2007DFD18 /* YModelTool.m */,
+				37B07BCC1F61498D007DFD18 /* YModelProtocol.h */,
 			);
 			path = SqliteLib;
 			sourceTree = "<group>";
@@ -240,7 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B07B8E1F60DCBE007DFD18 /* ViewController.m in Sources */,
+				37B07BBD1F6127D2007DFD18 /* YSqliteModelTool.m in Sources */,
+				37B07BB71F6124B3007DFD18 /* YModel.m in Sources */,
 				37B07BAE1F60E724007DFD18 /* YSqliteTool.m in Sources */,
+				37B07BC01F6129C2007DFD18 /* YModelTool.m in Sources */,
 				37B07B8B1F60DCBE007DFD18 /* AppDelegate.m in Sources */,
 				37B07B881F60DCBE007DFD18 /* main.m in Sources */,
 			);
@@ -251,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B07BA11F60DCBE007DFD18 /* YSqliteLibTests.m in Sources */,
+				37B07BC41F61302B007DFD18 /* YModelToolsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

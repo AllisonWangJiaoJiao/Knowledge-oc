@@ -1,19 +1,22 @@
 //
-//  YSqliteLibTests.m
-//  YSqliteLibTests
+//  YModelToolsTest.m
+//  YSqliteLib
 //
 //  Created by Allison on 2017/9/7.
 //  Copyright © 2017年 Allison. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import "YModelTool.h"
+#import "YModel.h"
+#import "YSqliteModelTool.h"
 #import "YSqliteTool.h"
 
-@interface YSqliteLibTests : XCTestCase
+@interface YModelToolsTest : XCTestCase
 
 @end
 
-@implementation YSqliteLibTests
+@implementation YModelToolsTest
 
 - (void)setUp {
     [super setUp];
@@ -25,23 +28,19 @@
     [super tearDown];
 }
 
-- (void)testExample {
-   
-    NSString *sql = @"CREATE TABLE IF NOT EXISTS t_stu(id integer PRIMARY KEY AUTOINCREMENT, name text NOT NULL ,age integer, score real)";
-   BOOL result =  [YSqliteTool dealSql:sql withUid:nil];
-    XCTAssertEqual(result, YES);
- 
-}
-
-- (void)testQuery{
+- (void)testTvarNameType {
     
-    NSString *sql = @"SELECT *FROM t_stu";
-    NSMutableArray *result = [YSqliteTool querySql:sql uid:nil];
-    NSLog(@"%@",result);
+//    [YSqliteTool openDBWithUID:nil];
+//   NSDictionary *dic =  [YModelTool getModelIvarNameIvarTypeDic:[YModel class]];
+//    NSDictionary *dic = [YModelTool getModelIvarNameSqliteTypeDic:[YModel class]];
+//    NSLog(@"%@",dic);
+    
+//    NSString *sql = [YModelTool columnNameAndTypesStr:[YModel class]];
+//    NSLog(@"---- %@",sql);
+ 
+    BOOL result = [YSqliteModelTool createTable:[YModel class] uid:nil];
+    NSLog(@"---- %d",result);
 }
-
-
-
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
