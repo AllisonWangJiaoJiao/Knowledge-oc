@@ -7,6 +7,7 @@
 //
 
 #import "YModelTool.h"
+#import "YModelProtocol.h"
 #import <objc/runtime.h>
 
 @implementation YModelTool
@@ -17,6 +18,12 @@
 + (NSString *)getTableNameWithModelClass: (Class)cls{
       return [NSStringFromClass(cls) lowercaseString];
 }
+/**
+ 获取临时表格名称
+ */
++ (NSString *)getTempTableNameWithModelClass: (Class)cls{
+    return [[NSStringFromClass(cls) lowercaseString ]stringByAppendingString:@"_tmp"];
+}
 
 /**
  所有成员变量,以及成员变量对应的类型
@@ -26,6 +33,11 @@
    //取出所有成员变量列表
    Ivar *varList =  class_copyIvarList(cls,&outCount);
     NSMutableDictionary *nameTypeDic = [NSMutableDictionary dictionary];
+    
+    NSArray *ignoreNamesArr = nil;
+    if ([cls respondsToSelector:@selector(ignoreIvarNames)]) {
+        ignoreNamesArr = [cls ignoreIvarNames];
+    }
     //遍历成员变量列表
     for (int i = 0; i < outCount; i++) {
         //取出成员变量
@@ -35,6 +47,10 @@
         if ([ivarName hasPrefix:@"_"]) {
             ivarName = [ivarName substringFromIndex:1];
         }
+        if ([ignoreNamesArr containsObject:ivarName]) {
+            continue;
+        }
+        
         //2.获取成员变量类型
         NSString *ivarType = [[NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"@\""]];
         
@@ -68,6 +84,21 @@
     
    return [result componentsJoinedByString:@","];
     
+}
+
+
+/**
+ 获取模型里面所有的字段
+ */
++ (NSArray <NSString *> *)getAllTableSortedModelIvarNames: (Class)cls{
+    
+    NSDictionary *dic = [self getModelIvarNameIvarTypeDic:cls];
+    NSArray *keys = dic.allKeys;
+    keys =  [keys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return [obj1 compare:obj2];
+    }];
+    
+    return keys;
 }
 
 

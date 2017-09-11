@@ -16,6 +16,10 @@
  获取表格名称
  */
 + (NSString *)getTableNameWithModelClass: (Class)cls;
+/**
+ 获取临时表格名称
+ */
++ (NSString *)getTempTableNameWithModelClass: (Class)cls;
 
 /**
  所有成员变量,以及成员变量对应的类型
@@ -31,6 +35,11 @@
  创建表格的sql字段和类型的语句拼接
  */
 + (NSString *)columnNameAndTypesStr:(Class)cls;
+
+/**
+ 获取模型里面所有的字段
+ */
++ (NSArray <NSString *> *)getAllTableSortedModelIvarNames: (Class)cls;
 
 
 @end

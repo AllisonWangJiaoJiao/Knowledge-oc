@@ -11,6 +11,7 @@
 #import "YModel.h"
 #import "YSqliteModelTool.h"
 #import "YSqliteTool.h"
+#import "YTableTool.h"
 
 @interface YModelToolsTest : XCTestCase
 
@@ -18,35 +19,54 @@
 
 @implementation YModelToolsTest
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
 - (void)testTvarNameType {
     
-//    [YSqliteTool openDBWithUID:nil];
 //   NSDictionary *dic =  [YModelTool getModelIvarNameIvarTypeDic:[YModel class]];
 //    NSDictionary *dic = [YModelTool getModelIvarNameSqliteTypeDic:[YModel class]];
 //    NSLog(@"%@",dic);
     
 //    NSString *sql = [YModelTool columnNameAndTypesStr:[YModel class]];
 //    NSLog(@"---- %@",sql);
- 
+//    [YTableTool getTableAllColumnNames:[YModel class] uid:nil];
+    
+
+    
+    BOOL result = [YSqliteModelTool updateTable:[YModel class] uid:nil];
+     NSLog(@"---- %d",result);
+}
+/**
+ 输出数据库路径
+ */
+- (void)testDBPath{
+    
+    [YSqliteTool openDBWithUID:nil];
+}
+/**
+ 测试创建表格
+ */
+- (void)testCreateTable{
+    
     BOOL result = [YSqliteModelTool createTable:[YModel class] uid:nil];
     NSLog(@"---- %d",result);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+/**
+ 测试是否需要更新
+ */
+- (void)testEequiredUpdate {
+    BOOL result =  [YSqliteModelTool isTableRequiredUpdate:[YModel class] uid:nil];
+    NSLog(@"---- %d",result);
 }
+
+/**
+ 字段改名
+ */
+- (void)testUpdateTable{
+   BOOL update =  [YSqliteModelTool updateTable:[YModel class] uid:nil];
+    NSLog(@"%d",update);
+}
+
+
+
 
 @end

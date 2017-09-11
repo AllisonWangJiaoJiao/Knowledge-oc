@@ -14,4 +14,12 @@
     
     return @"stuNum";
 }
+//+ (NSArray *)ignoreIvarNames{
+//    return @[@"score2",@"score3"];
+//}
+
++ (NSDictionary *)newNameToOldNameDic{
+    return @{@"age":@"age2"};
+}
+
 @end

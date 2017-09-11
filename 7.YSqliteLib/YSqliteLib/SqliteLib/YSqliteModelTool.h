@@ -16,9 +16,15 @@
 
 @interface YSqliteModelTool : NSObject
 
-//动态创建表
-+ (BOOL)createTable:(Class)cls uid:(NSString *)uid;
+/**
+  判断表格是否需要更新数据
+ */
++ (BOOL)isTableRequiredUpdate:(Class)cls uid: (NSString *)uid;
 
-//+ (void)saveModel:(id)model;
+///动态创建表
++ (BOOL)createTable:(Class)cls uid:(NSString *)uid;
+///更新表
++ (BOOL)updateTable: (Class)cls uid: (NSString *)uid;
+
 
 @end

@@ -9,7 +9,9 @@
 #import "YSqliteTool.h"
 #import "sqlite3.h"
 
-#define kCachePath  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject
+//#define kCachePath  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject
+#define kCachePath  @"/Users/wuxianlvzhou/Desktop"
+
 
 @implementation YSqliteTool
 
@@ -152,8 +154,36 @@ static sqlite3 *_ppDb;
         return NO;
     }
     return YES;
-    
 }
+
+
++ (BOOL)dealSqls:(NSArray <NSString *>*)sqls uid:(NSString *)uid{
+    [self beginTransaction:uid];
+    for (NSString *sql in sqls) {
+       BOOL result = [self dealSql:sql withUid:uid];
+        if (result == NO) {
+            [self rollBackTransaction:uid];
+            return NO;
+        }
+    }
+    [self commitTransaction:uid];
+    return YES;
+}
+
+
++ (void)beginTransaction:(NSString *)uid {
+    [self dealSql:@"begin transaction" withUid:uid];
+}
+
++ (void)commitTransaction:(NSString *)uid {
+    [self dealSql:@"commit transaction" withUid:uid];
+}
+
++ (void)rollBackTransaction:(NSString *)uid {
+    [self dealSql:@"rollback transaction" withUid:uid];
+}
+
+
 
 ///关闭数据库
 + (void)closeDBWithUID: (NSString *)uid {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372EF7A41F618481001BDE9A /* YTableTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 372EF7A31F618481001BDE9A /* YTableTool.m */; };
 		37B07B881F60DCBE007DFD18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B07B871F60DCBE007DFD18 /* main.m */; };
 		37B07B8B1F60DCBE007DFD18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B07B8A1F60DCBE007DFD18 /* AppDelegate.m */; };
 		37B07B8E1F60DCBE007DFD18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B07B8D1F60DCBE007DFD18 /* ViewController.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		372EF7A21F618481001BDE9A /* YTableTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTableTool.h; sourceTree = "<group>"; };
+		372EF7A31F618481001BDE9A /* YTableTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTableTool.m; sourceTree = "<group>"; };
 		37B07B831F60DCBE007DFD18 /* YSqliteLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSqliteLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B07B871F60DCBE007DFD18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37B07B891F60DCBE007DFD18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				37B07BBC1F6127D2007DFD18 /* YSqliteModelTool.m */,
 				37B07BBE1F6129C2007DFD18 /* YModelTool.h */,
 				37B07BBF1F6129C2007DFD18 /* YModelTool.m */,
+				372EF7A21F618481001BDE9A /* YTableTool.h */,
+				372EF7A31F618481001BDE9A /* YTableTool.m */,
 				37B07BCC1F61498D007DFD18 /* YModelProtocol.h */,
 			);
 			path = SqliteLib;
@@ -265,6 +270,7 @@
 				37B07BAE1F60E724007DFD18 /* YSqliteTool.m in Sources */,
 				37B07BC01F6129C2007DFD18 /* YModelTool.m in Sources */,
 				37B07B8B1F60DCBE007DFD18 /* AppDelegate.m in Sources */,
+				372EF7A41F618481001BDE9A /* YTableTool.m in Sources */,
 				37B07B881F60DCBE007DFD18 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
