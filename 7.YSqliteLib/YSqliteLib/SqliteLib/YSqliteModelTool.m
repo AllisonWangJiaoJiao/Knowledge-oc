@@ -21,11 +21,12 @@
 + (BOOL)isTableRequiredUpdate:(Class)cls uid: (NSString *)uid{
     
     //1. 获取模型里面所有的字段
-    NSArray *modelNames = [YModelTool getAllTableSortedModelIvarNames:cls];
+    NSArray *modelNamesArr = [YModelTool getAllTableSortedModelIvarNames:cls];
     //2.获取老表中的字段的名称
-    NSArray *tableNames = [YTableTool getTableAllColumnNames:cls uid:uid];
+    NSArray *tableNamesArr = [YTableTool getTableAllColumnNames:cls uid:uid];
     //3.直接对比数组
-    return ![modelNames isEqualToArray:tableNames];
+    return ![modelNamesArr isEqualToArray:tableNamesArr];
+    
 }
 
 
@@ -89,7 +90,7 @@
             oldName = newNameToOldNameDic[columnName];
         }
         //如果老表里面包含了新的列名 应该从老表更新到临时表格里面
-        if ((![oldNammesArr containsObject:columnName] && [oldNammesArr containsObject:oldName]) || [oldName isEqualToString:primaryKey]) {
+        if ((![oldNammesArr containsObject:columnName] && ![oldNammesArr containsObject:oldName]) || [oldName isEqualToString:primaryKey]) {
             continue;
         }
         //update 临时表 set 新字段名称 = (select 旧的字段名 from 旧表 where 临时表.主键 - 旧表.主键)

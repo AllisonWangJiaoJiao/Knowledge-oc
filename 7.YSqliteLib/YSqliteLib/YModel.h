@@ -14,8 +14,10 @@
 
 @property (nonatomic,copy)NSString *name;
 @property (nonatomic,assign)int stuNum;
-@property (nonatomic,assign)int abc123;
+@property (nonatomic,assign)int age2;
 @property (nonatomic,assign)float score;
+//@property (nonatomic,assign)float score2;
+
 
 //@property (nonatomic, strong) Getstation *getstation;
 

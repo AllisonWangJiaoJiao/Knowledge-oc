@@ -19,7 +19,7 @@
 //}
 
 + (NSDictionary *)newNameToOldNameDic{
-    return @{@"age":@"age2"};
+    return @{@"age2":@"age"};
 }
 
 @end
