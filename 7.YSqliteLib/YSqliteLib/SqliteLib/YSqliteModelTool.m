@@ -108,7 +108,103 @@
     return [YSqliteTool dealSqls:execSqlsArr uid:uid];
 }
 
++ (BOOL)deleteModel:(id)model uid:(NSString *)uid{
+    
+    Class cls = [model class];
+    NSString *tableName = [YModelTool getTableNameWithModelClass:cls];
+    
+    if (! [cls respondsToSelector:@selector(primaryKey)]) {
+        NSLog(@"如果想要操作你这个模型, 必须要通过 - (NSString *)primaryKey; 方法, 来提供一个主键");
+        return NO;
+    }
+    NSString *primaryKey = [cls primaryKey];
+    id primaryValue = [model valueForKeyPath:primaryKey];
+    
+    NSString *deleteSql = [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = %@",tableName,primaryKey,primaryValue];
 
+    return [YSqliteTool dealSql:deleteSql withUid:uid];
+}
+
+
++ (BOOL)deleteModel:(Class)cls whereStr:(NSString *)whereStr uid:(NSString *)uid{
+
+    NSString *tableName = [YModelTool getTableNameWithModelClass:cls];
+
+    NSString *deleteSql = [NSString stringWithFormat:@"DELETE FROM %@",tableName];
+    if (whereStr.length > 0) {
+        deleteSql = [deleteSql stringByAppendingFormat:@" WHERE %@",whereStr];
+    }
+    return [YSqliteTool dealSql:deleteSql withUid:uid];
+
+}
+
++ (BOOL)deleteModel:(Class)cls cloumnName:(NSString *)name relation:(ColumnNameToValueRelationType)relation value:(id)value uid :(NSString *)uid{
+    
+    NSString *tableName = [YModelTool getTableNameWithModelClass:cls];
+    
+    NSString *deleteSql = [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ %@ %@",tableName,name,self.relationTypeSQLRelation[@(relation)],value];
+
+    return [YSqliteTool dealSql:deleteSql withUid:uid];
+}
+
++ (BOOL)deleteModel:(Class)cls keys: (NSArray *)keys relations: (NSArray *)relations values: (NSArray *)values nao: (NSArray *)naos uid: (NSString *)uid{
+    
+    NSMutableString *resultStr = [NSMutableString string];
+    
+    for (int i = 0; i < keys.count; i++) {
+        
+        NSString *key = keys[i];
+        NSString *relationStr = [self relationTypeSQLRelation][relations[i]];
+        id value = values[i];
+        
+        NSString *tempStr = [NSString stringWithFormat:@"%@ %@ '%@'", key, relationStr, value];
+        
+        [resultStr appendString:tempStr];
+        
+        if (i != keys.count - 1) {
+            NSString *naoStr = [self naoTypeSQLRelation][naos[i]];
+            [resultStr appendString:[NSString stringWithFormat:@" %@ ", naoStr]];
+        }
+    }
+    
+    NSString *tableName = [YModelTool getTableNameWithModelClass:cls];
+    NSString *delSql = [NSString stringWithFormat:@"delete from %@ where %@", tableName, resultStr];
+    return [YSqliteTool dealSql:delSql withUid:uid];
+    
+}
+
++ (BOOL)deleteWithSql: (NSString *)sql uid: (NSString *)uid {
+    return  [YSqliteTool dealSql:sql withUid:uid];
+}
+
+/**
+ 枚举 -> sql 逻辑运算符 映射表
+ */
+
++ (NSDictionary *)relationTypeSQLRelation {
+    
+    return @{
+             @(ColumnNameToValueRelationTypeMore):@">",
+             @(ColumnNameToValueRelationTypeLess):@"<",
+             @(ColumnNameToValueRelationTypeEqual):@"=",
+             @(ColumnNameToValueRelationTypeMoreEqual):@">=",
+             @(ColumnNameToValueRelationTypeLessEqual):@"<=",
+             };
+}
+
+
+/**
+ 枚举 -> sql 逻辑运算符 映射表
+ */
++ (NSDictionary *)naoTypeSQLRelation {
+    
+    return @{
+             @(YSqliteModelToolNAONot) : @"not",
+             @(YSqliteModelToolNAOAnd) : @"and",
+             @(YSqliteModelToolNAOOr) : @"or"
+             };
+    
+}
 
 
 @end

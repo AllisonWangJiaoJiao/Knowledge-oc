@@ -67,6 +67,50 @@
 }
 
 
+/**
+ 数据删除
+ */
+- (void)testDeleteModel{
+    YModel *model = [[YModel alloc]init];
+    model.stuNum = 11;
+
+    BOOL delete = [YSqliteModelTool deleteModel:model uid:nil ];
+    NSLog(@"%d",delete);
+
+}
+
+- (void)testDeleteModelWhere{
+    YModel *model = [[YModel alloc]init];
+    model.stuNum = 11;
+    
+    BOOL delete = [YSqliteModelTool deleteModel:[YModel class] whereStr:@"score <= 4" uid:nil ];
+    NSLog(@"%d",delete);
+    
+}
+
+- (void)testDeleteModelRelationType{
+    YModel *model = [[YModel alloc]init];
+    model.stuNum = 11;
+    
+    BOOL delete = [YSqliteModelTool deleteModel:[YModel class] cloumnName:@"name" relation:ColumnNameToValueRelationTypeEqual value:@44 uid:nil];
+    NSLog(@"%d",delete);
+    
+}
+
+- (void)testDeleteModelRelationType2{
+    
+    BOOL delete = [YSqliteModelTool deleteModel:[YModel class] keys:@[@"age",@"name",@"stuNum"] relations:@[@(ColumnNameToValueRelationTypeMore),@(ColumnNameToValueRelationTypeEqual),@(ColumnNameToValueRelationTypeEqual)] values:@[@"1",@"44",@"22"] nao:@[@(YSqliteModelToolNAOAnd),@(YSqliteModelToolNAOAnd)] uid:nil];
+    NSLog(@"%d",delete);
+    
+}
+
+- (void)testDeleteWithSql{
+    
+    NSString *sql = @"delete from ymodel where age > '100' and name = '444'";
+    BOOL delete = [YSqliteModelTool deleteWithSql:sql uid:nil];
+    NSLog(@"%d",delete);
+
+}
 
 
 @end
